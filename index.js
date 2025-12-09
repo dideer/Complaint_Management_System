@@ -101,7 +101,7 @@ async function initializeDB() {
       )
     `);
     connection.release();
-    console.log('Database initialized successfully');
+    console.warn('Database initialized successfully');
   } catch (error) {
     console.error('Database initialization failed:', error);
   }
@@ -109,7 +109,7 @@ async function initializeDB() {
 
 app.listen(PORT, async () => {
   await initializeDB();
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.warn(`Server running on http://localhost:${PORT}`);
 });
 
 module.exports = app;
