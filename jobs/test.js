@@ -3,8 +3,8 @@ const { spawn } = require('child_process');
 function runTest(type = 'all') {
   return new Promise((resolve, reject) => {
     const testType = type === 'unit' ? 'unit' :
-                      type === 'integration' ? 'integration' :
-                      'all';
+      type === 'integration' ? 'integration' :
+      'all';
 
     console.warn(`\n📋 Running ${testType} tests...`);
 
