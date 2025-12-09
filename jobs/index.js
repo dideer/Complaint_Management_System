@@ -9,35 +9,35 @@ async function executeJob(jobName, options = {}) {
     console.warn(`${'='.repeat(50)}`);
 
     switch (jobName) {
-      case 'test':
-        await runTest(options.type || 'all');
-        break;
+    case 'test':
+      await runTest(options.type || 'all');
+      break;
 
-      case 'test:unit':
-        await runTest('unit');
-        break;
+    case 'test:unit':
+      await runTest('unit');
+      break;
 
-      case 'test:integration':
-        await runTest('integration');
-        break;
+    case 'test:integration':
+      await runTest('integration');
+      break;
 
-      case 'build':
-        await runBuild();
-        break;
+    case 'build':
+      await runBuild();
+      break;
 
-      case 'deploy':
-        await runDeploy(options.env || 'development');
-        break;
+    case 'deploy':
+      await runDeploy(options.env || 'development');
+      break;
 
-      case 'ci':
-        // Complete CI pipeline
-        console.warn('\n🔄 Running complete CI pipeline...\n');
-        await runTest('all');
-        await runBuild();
-        break;
+    case 'ci':
+      // Complete CI pipeline
+      console.warn('\n🔄 Running complete CI pipeline...\n');
+      await runTest('all');
+      await runBuild();
+      break;
 
-      default:
-        throw new Error(`Unknown job: ${jobName}`);
+    default:
+      throw new Error(`Unknown job: ${jobName}`);
     }
 
     console.warn(`\n${'='.repeat(50)}`);
