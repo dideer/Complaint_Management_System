@@ -27,7 +27,7 @@ function runDeploy(environment = 'development') {
         shell: true
       });
 
-      stop.on('close', (code) => {
+      stop.on('close', (_code) => {
         console.warn('  ✅ Containers stopped');
 
         // Step 3: Start new containers
